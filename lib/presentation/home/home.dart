@@ -25,6 +25,24 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () {
                   Get.defaultDialog();
                 },
+                child: Text('Show alert dialog')),
+            ElevatedButton(
+                onPressed: () {
+                  Get.bottomSheet(Container(
+                    child: Wrap(
+                      children: [
+                        ListTile(
+                          title: Text('Light theme'),
+                          onTap: () => Get.changeTheme(ThemeData.light()),
+                        ),
+                        ListTile(
+                          title: Text('Dark theme'),
+                          onTap: () => Get.changeTheme(ThemeData.dark()),
+                        )
+                      ],
+                    ),
+                  ));
+                },
                 child: Text('Show alert dialog'))
           ],
         ),
